@@ -1,0 +1,2539 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn Arabic Online For Kids | Riwaq Al Quran</title>
+       <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap"
+            rel="stylesheet">    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+<style>
+  :root {
+    --gold: #1c90a8;
+    --gold-light: #61CE70;
+    --gold-dark: #157a8f;
+    --cream: #f0fbf8;
+    --dark: #0a1f1c;
+    --dark-mid: #0f2d29;
+    --text: #0d2e2a;
+    --white: #f7fffe;
+    --accent: #61CE70;
+  }
+
+        /* =========================================
+           1. CTA SECTION
+        ========================================= */
+        .zq-cta-section {
+            position: relative;
+            padding: 5rem 5%;
+            /* دمج لونين: الفاتح فوق والغامق تحت */
+            background: linear-gradient(to bottom, var(--cream) 50%, var(--dark) 50%); 
+            box-sizing: border-box;
+        }
+
+        .zq-cta-box {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: var(--gold); /* البوكس لونه بترولي */
+            box-shadow: 14px 14px 0px 0px var(--accent); /* الشادو لونه أخضر */
+            padding: 3.5rem 4rem;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .zq-cta-lines {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-100,100 C200,300 400,-100 800,200 S1200,50 1400,200' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M-50,200 C250,400 450,0 850,300 S1250,150 1450,300' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M-150,300 C150,500 350,100 750,400 S1150,250 1350,400' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E");
+            background-size: cover;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .zq-cta-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            position: relative;
+            z-index: 1; 
+        }
+
+        .zq-text-side { flex: 1; max-width: 650px; }
+
+        .zq-text-side h2 {
+            font-size: clamp(1.4rem, 2vw, 1.8rem);
+            color: var(--white); /* أبيض عشان يقرأ كويس على البترولي */
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 800;
+        }
+
+        .zq-text-side p {
+            color: var(--white);
+            opacity: 0.85;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .zq-form { display: flex; gap: 15px; }
+
+        .zq-form input {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid var(--dark); 
+            border-radius: 4px;
+            font-size: 0.9rem;
+            outline: none;
+            background: var(--white);
+            color: var(--text);
+        }
+
+        .zq-form input:focus { border-color: var(--accent); }
+
+        .zq-form button {
+            background-color: var(--dark);
+            color: var(--white);
+            border: none;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            white-space: nowrap; 
+        }
+
+        .zq-form button:hover { background-color: var(--dark-mid); }
+
+        .zq-img-side {
+            width: 250px; 
+            flex-shrink: 0;
+            animation: floatFree 3s ease-in-out infinite; 
+        }
+
+        @keyframes floatFree {
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+            100% { transform: translateY(0px) scale(1); }
+        }
+
+        @media (max-width: 991px) {
+            .zq-cta-box { padding: 2.5rem 2rem; }
+            .zq-cta-content { flex-direction: column; text-align: center; gap: 2.5rem; }
+            .zq-form { flex-direction: column; gap: 12px; }
+            .zq-form button { width: 100%; }
+            .zq-img-side { width: 200px; margin: 0 auto; }
+        }
+
+        /* =========================================
+           2. TESTIMONIAL SLIDER
+        ========================================= */
+        .testimonial-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: var(--white); 
+            border-radius: 20px;
+            overflow: hidden;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 20px rgba(10, 31, 28, 0.05); /* ظل بلوننا الغامق */
+        }
+
+        .testimonial-content { width: 55%; position: relative; }
+
+        .quote-mark {
+            font-size: 120px;
+            font-family: Georgia, serif;
+            color: var(--gold); 
+            line-height: 0;
+            margin-bottom: 30px;
+            margin-left: 20px;
+            opacity: 0.2; /* خففنا شفافيتها عشان تبقى أشيك */
+        }
+
+        .swiper {
+            width: 100%;
+            padding-bottom: 40px !important;
+            padding-top: 20px !important;
+            overflow: visible; 
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+
+        .swiper-wrapper {
+            align-items: center;
+            transition-timing-function: linear !important; 
+            will-change: transform;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(10, 31, 28, 0.08);
+            text-align: left;
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid rgba(28, 144, 168, 0.1);
+        }
+
+        .swiper-slide {
+            width: 75%; 
+            opacity: 0.3;
+            transform: scale(0.85); 
+            transition: all 0.4s ease;
+            pointer-events: none; 
+            will-change: transform, opacity;
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .review-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .user-info { display: flex; align-items: center; gap: 15px; }
+
+        .user-info img {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent); 
+        }
+
+        .user-details h4 {
+            font-size: 16px;
+            color: var(--gold); 
+            margin-bottom: 5px;
+        }
+
+        .user-details p {
+            font-size: 12px;
+            color: var(--text);
+            opacity: 0.6;
+        }
+
+        .swiper-pagination-bullet { background: rgba(10, 31, 28, 0.2); opacity: 1; width: 10px; height: 10px; transition: all 0.3s ease; }
+        .swiper-pagination-bullet-active { background: var(--accent); width: 25px; border-radius: 5px; }
+
+        .btn-wrapper { margin-top: 20px; margin-left: 20px; }
+
+        .view-all-btn {
+            display: inline-block;
+            background-color: var(--gold); 
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+            background-color: var(--dark); 
+            transform: translateY(-2px);
+        }
+
+        .testimonial-image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .testimonial-image img { max-width: 100%; height: auto; border-radius: 20px; }
+
+        @media (max-width: 991px) {
+            .testimonial-section { flex-direction: column-reverse; }
+            .testimonial-content, .testimonial-image { width: 100%; }
+            .testimonial-image { margin-bottom: 30px; }
+            .swiper-slide { width: 90%; }
+            .quote-mark { margin-left: 0; }
+        }
+
+        /* =========================================
+           3. FAQ SECTION
+        ========================================= */
+        .faq-section {
+            max-width: 900px;
+            margin: 6rem auto;
+            padding: 0 5%;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--text); 
+            margin-bottom: 3.5rem;
+            line-height: 1.3;
+            font-weight: 800;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(13, 46, 42, 0.1);
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:first-child { border-top: 1px solid rgba(13, 46, 42, 0.1); }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            text-align: left;
+            font-family: inherit;
+            transition: color 0.3s;
+        }
+
+        .faq-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--dark); 
+            color: var(--white);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-left: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .faq-icon::before {
+            content: '+';
+            position: absolute;
+            top: 48%; left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1;
+        }
+
+        .faq-item.open .faq-icon {
+            background-color: var(--accent); 
+            color: var(--dark);
+        }
+
+        .faq-item.open .faq-icon::before { content: '−'; top: 45%; font-size: 1.4rem; }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            opacity: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px; 
+            opacity: 1;
+        }
+
+        .faq-answer p {
+            color: var(--text);
+            opacity: 0.8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+            padding-top: 1rem;
+            padding-right: 3rem; 
+        }
+
+        /* =========================================
+           4. MENTORS & COURSES GRID (Unified Section)
+        ========================================= */
+        .unified-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: var(--white); 
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(10, 31, 28, 0.05); 
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--text);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 15px;
+            color: var(--text);
+            opacity: 0.75;
+            line-height: 1.6;
+        }
+
+        .mentors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .courses-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+        /* Neo-Brutalism Hover Effect */
+        .brutal-card {
+            background-color: var(--white);
+            border: 2px solid rgba(13, 46, 42, 0.1); 
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease; 
+            position: relative;
+        }
+
+        .brutal-card:hover {
+            border-color: var(--dark); 
+            box-shadow: 8px 8px 0px 0px var(--dark); /* ظل باللون الداكن بتاعنا */
+            transform: translate(-4px, -4px); 
+        }
+
+        .mentor-img { width: 100%; height: 350px; object-fit: cover; background-color: var(--cream); border-bottom: 1px solid rgba(13, 46, 42, 0.1); }
+        .mentor-content { padding: 20px; text-align: center; display: flex; flex-direction: column; flex-grow: 1; }
+        
+        .mentor-name { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+        .mentor-sessions { font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
+
+        .course-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid rgba(13, 46, 42, 0.1); }
+        .course-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        
+        .course-title { font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 10px; line-height: 1.4; }
+        .course-desc { font-size: 14px; color: var(--text); opacity: 0.8; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+
+        .btn-wrapper { margin-top: auto; }
+        .brutal-btn { display: inline-block; width: 100%; text-align: center; padding: 12px 15px; font-size: 14px; font-weight: 700; text-decoration: none; border-radius: 4px; transition: all 0.2s ease; }
+
+        .btn-mentor { background-color: transparent; color: var(--dark); border: 2px solid var(--dark); }
+        .btn-mentor:hover { box-shadow: 4px 4px 0px 0px var(--accent); transform: translate(-2px, -2px); background-color: var(--dark); color: var(--white); }
+
+        .btn-course { background-color: var(--dark); color: var(--white); border: 2px solid var(--dark); display: flex; justify-content: center; align-items: center; gap: 8px; }
+        .btn-course:hover { background-color: var(--gold); border-color: var(--gold); box-shadow: 4px 4px 0px 0px var(--accent); transform: translate(-2px, -2px); }
+
+        @media (max-width: 992px) {
+            .mentors-grid { grid-template-columns: repeat(2, 1fr); }
+            .courses-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 576px) {
+            .mentors-grid { grid-template-columns: 1fr; }
+            .courses-grid { grid-template-columns: 1fr; }
+        }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 1rem 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(26, 18, 8, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212, 160, 23, 0.3);
+    transition: all .4s;
+  }
+  .nav-logo {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem; color: var(--gold-light);
+    letter-spacing: .05em;
+  }
+  .nav-logo span { color: var(--white); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,253,247,.7); font-size: .9rem; text-decoration: none;
+    letter-spacing: .08em; text-transform: uppercase;
+    transition: color .3s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+    background: var(--gold); transition: width .3s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    background: var(--gold); color: var(--dark);
+    padding: .6rem 1.5rem; border-radius: 2px;
+    font-weight: 700; font-size: .85rem; text-decoration: none;
+    letter-spacing: .1em; text-transform: uppercase;
+    transition: all .3s;
+    border: 2px solid var(--gold);
+  }
+  .nav-cta:hover { background: transparent; color: var(--gold); }
+
+  /* ── HERO ── */
+.hero {
+  position: relative; 
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* التعديل هنا لتقسيم الشاشة */
+  align-items: center; 
+  overflow: hidden;
+  background: var(--dark);
+}
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1800&q=85') center 30%/cover no-repeat;
+    opacity: 1;
+    transform: scale(1.06);
+    animation: heroZoom 10s ease-out forwards;
+  }
+  @keyframes heroZoom {
+    to { transform: scale(1); }
+  }
+
+  /* rich dark overlay so text pops clearly */
+  .hero-geo {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to bottom,
+        rgba(10,31,28,.45) 0%,
+        rgba(10,31,28,.60) 40%,
+        rgba(10,31,28,.88) 100%),
+      linear-gradient(to right, rgba(10,31,28,.55) 0%, transparent 60%);
+  }
+
+  /* Arabic pattern overlay */
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: .05;
+    background-image: repeating-linear-gradient(
+      45deg, var(--gold-light) 0, var(--gold-light) 1px, transparent 0, transparent 50%
+    );
+    background-size: 28px 28px;
+  }
+
+  /* Arabic letter decorations */
+  .arabic-deco {
+    position: absolute;
+    font-family: 'Amiri', serif;
+    color: var(--gold);
+    opacity: .07;
+    pointer-events: none;
+    user-select: none;
+    font-weight: 700;
+  }
+  .arabic-deco.d1 { font-size: 28rem; top: -5rem; right: -4rem; opacity: .04; }
+  .arabic-deco.d2 { font-size: 18rem; bottom: -3rem; left: -2rem; opacity: .05; }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 10rem 6% 6rem;
+    max-width: 900px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(212,160,23,.15);
+    border: 1px solid rgba(212,160,23,.4);
+    color: var(--gold-light);
+    padding: .4rem 1rem; border-radius: 2px;
+    font-size: .8rem; letter-spacing: .15em; text-transform: uppercase;
+    margin-bottom: 2rem;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .7s .2s forwards;
+  }
+  .hero-badge::before {
+    content: '✦'; font-size: .7rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 6.5vw, 6.5rem);
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp .8s .35s forwards;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold-light);
+    position: relative;
+  }
+  .hero-title em::after {
+    content: '';
+    position: absolute; bottom: 4px; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .hero-desc {
+    color: rgba(255,253,247,.65);
+    font-size: 1.1rem; line-height: 1.8;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp .8s .5s forwards;
+  }
+
+  .hero-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; color: var(--gold-light);
+    margin-bottom: 2rem;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .7s .65s forwards;
+  }
+  .hero-price span { font-size: 2.5rem; font-weight: 900; }
+
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .7s .8s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 1rem 2.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none; border: 2px solid var(--gold);
+    letter-spacing: .05em;
+    transition: all .35s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    background: transparent; color: var(--gold);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500; font-size: 1rem;
+    text-decoration: none; border: 1px solid rgba(255,253,247,.3);
+    letter-spacing: .05em;
+    transition: all .35s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem;
+    margin-top: 3rem;
+    opacity: 0; animation: fadeUp .7s 1s forwards;
+  }
+  .stat {
+    text-align: center;
+    border-left: 2px solid var(--gold);
+    padding-left: 1rem;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: var(--gold-light); font-weight: 900; line-height: 1;
+  }
+  .stat-label { color: rgba(255,253,247,.5); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+
+  /* scroll indicator */
+  .scroll-ind {
+    position: absolute; bottom: 2rem; right: 50%; z-index: 5;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    color: rgba(255,253,247,.4); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
+    opacity: 0; animation: fadeUp .7s 1.2s forwards;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 2s 1.5s infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ── ABOUT SECTION ── */
+  .about {
+    background: var(--white);
+    padding: 8rem 5%;
+    position: relative;
+    overflow: hidden;
+  }
+  .about::before {
+    content: 'عربي';
+    font-family: 'Amiri', serif;
+    position: absolute; right: -2rem; top: 50%;
+    transform: translateY(-50%);
+    font-size: 20rem; color: var(--gold); opacity: .03;
+    pointer-events: none;
+  }
+  .section-tag {
+    display: inline-block;
+    color: var(--gold-dark); font-size: .8rem;
+    letter-spacing: .2em; text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-left: 2rem; position: relative;
+  }
+  .section-tag::before {
+    content: '';
+    position: absolute; left: 0; top: 50%;
+    width: 1.4rem; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    line-height: 1.15; color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+  }
+  .about-text p {
+    color: #1a4a44; line-height: 1.9; margin-bottom: 1.5rem; font-size: 1.05rem;
+  }
+
+  .features-list {
+    margin-top: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .feat-item {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-left: 3px solid var(--gold);
+    background: rgba(212,160,23,.05);
+    transition: all .35s;
+    opacity: 0; transform: translateX(-30px);
+  }
+  .feat-item.visible { opacity: 1; transform: none; }
+  .feat-item:hover { background: rgba(212,160,23,.1); transform: translateX(5px); }
+  .feat-icon {
+    width: 36px; height: 36px; min-width: 36px;
+    background: var(--gold); color: var(--dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 700;
+  }
+  .feat-text h4 { font-weight: 700; color: var(--dark); margin-bottom: .2rem; }
+  .feat-text p { font-size: .9rem; color: #2a6b60; margin: 0; }
+
+  /* about image side */
+  .about-imgs {
+    position: relative;
+  }
+  .about-img-main {
+    width: 100%; aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+    box-shadow: 20px 20px 60px rgba(26,18,8,.2);
+    opacity: 0; transform: translateY(40px);
+    transition: all .9s;
+  }
+  .about-img-main.visible { opacity: 1; transform: none; }
+  .about-img-accent {
+    position: absolute;
+    bottom: -3rem; left: -3rem;
+    width: 55%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 6px solid var(--white);
+    box-shadow: 10px 10px 40px rgba(26,18,8,.15);
+    opacity: 0; transform: translate(-20px, 20px);
+    transition: all .9s .2s;
+  }
+  .about-img-accent.visible { opacity: 1; transform: none; }
+  .about-badge {
+    position: absolute; top: 2rem; right: -2rem;
+    background: var(--gold); color: var(--dark);
+    padding: 1.5rem; text-align: center;
+    box-shadow: 10px 10px 30px rgba(212,160,23,.3);
+    opacity: 0; transform: scale(0.8);
+    transition: all .7s .4s;
+  }
+  .about-badge.visible { opacity: 1; transform: none; }
+  .about-badge .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; font-weight: 900; line-height: 1;
+    display: block;
+  }
+  .about-badge .lbl { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+
+  /* ── TIPS SECTION ── */
+  .tips {
+    background: var(--dark);
+    padding: 8rem 5%;
+    position: relative; overflow: hidden;
+  }
+  .tips-inner {
+    max-width: 900px; margin: 0 auto; text-align: center;
+  }
+  .tips .section-title { color: var(--white); }
+  .tips .section-tag { color: var(--gold); }
+  .tips-desc {
+    color: rgba(255,253,247,.6); line-height: 1.9; font-size: 1.05rem; max-width: 700px; margin: 0 auto 4rem;
+  }
+
+  .tips-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; text-align: left;
+  }
+  .tip-card {
+    background: rgba(255,253,247,.04);
+    border: 1px solid rgba(212,160,23,.15);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all .4s;
+    opacity: 0; transform: translateY(30px);
+  }
+  .tip-card.visible { opacity: 1; transform: none; }
+  .tip-card:hover { background: rgba(212,160,23,.08); border-color: rgba(212,160,23,.4); transform: translateY(-5px); }
+  .tip-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .4s;
+  }
+  .tip-card:hover::before { transform: scaleX(1); }
+  .tip-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; font-weight: 900; color: rgba(212,160,23,.15);
+    line-height: 1; margin-bottom: .5rem;
+  }
+  .tip-card h4 { color: var(--gold-light); font-size: 1.1rem; margin-bottom: .8rem; }
+  .tip-card p { color: rgba(255,253,247,.55); font-size: .95rem; line-height: 1.7; }
+
+  /* ── CURRICULUM ── */
+  .curriculum {
+    background: var(--cream);
+    padding: 8rem 5%;
+  }
+  .curriculum-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; margin-top: 4rem; align-items: start;
+  }
+  .cur-list { display: flex; flex-direction: column; gap: .8rem; }
+  .cur-item {
+    display: flex; align-items: center; gap: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--white);
+    border: 1px solid rgba(212,160,23,.2);
+    cursor: pointer;
+    transition: all .3s;
+    opacity: 0; transform: translateX(-20px);
+  }
+  .cur-item.visible { opacity: 1; transform: none; }
+  .cur-item:hover, .cur-item.active {
+    border-color: var(--gold); background: rgba(212,160,23,.06);
+  }
+  .cur-item .icon {
+    width: 42px; height: 42px; background: rgba(212,160,23,.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; flex-shrink: 0; transition: background .3s;
+  }
+  .cur-item:hover .icon, .cur-item.active .icon { background: var(--gold); }
+  .cur-item h5 { font-weight: 700; color: var(--dark); font-size: 1rem; }
+  .cur-item p { font-size: .85rem; color: #2a6b60; margin-top: .1rem; }
+
+  .cur-detail {
+    background: var(--dark);
+    padding: 3rem;
+    position: sticky; top: 100px;
+    opacity: 0; transform: translateY(20px);
+    transition: all .7s .3s;
+  }
+  .cur-detail.visible { opacity: 1; transform: none; }
+  .cur-detail h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-light); font-size: 1.8rem; margin-bottom: 1rem;
+  }
+  .cur-detail p { color: rgba(255,253,247,.6); line-height: 1.8; margin-bottom: 1.5rem; }
+  .cur-detail ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+  .cur-detail ul li {
+    color: rgba(255,253,247,.7); padding-left: 1.5rem; position: relative; font-size: .95rem;
+  }
+  .cur-detail ul li::before { content: '✦'; position: absolute; left: 0; color: var(--gold); font-size: .7rem; top: 3px; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--gold) 0%, #61CE70 100%);
+    padding: 5rem 5%;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      -45deg, rgba(26,18,8,.05) 0, rgba(26,18,8,.05) 1px, transparent 0, transparent 20px
+    );
+  }
+  .cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--dark); margin-bottom: 1rem;
+    position: relative;
+  }
+  .cta-banner p { color: rgba(26,18,8,.7); font-size: 1.1rem; margin-bottom: 2.5rem; position: relative; }
+  .cta-banner .btn-dark {
+    background: var(--dark); color: var(--gold-light);
+    padding: 1.1rem 3rem;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    text-decoration: none;
+    letter-spacing: .05em;
+    display: inline-block;
+    transition: all .35s;
+    position: relative;
+  }
+  .cta-banner .btn-dark:hover { background: var(--dark-mid); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(26,18,8,.3); }
+
+  /* ── BENEFITS ── */
+  .benefits {
+    background: var(--white);
+    padding: 8rem 5%;
+    overflow: hidden;
+  }
+  .benefits-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2rem; margin-top: 4rem;
+  }
+  .benefit-card {
+    padding: 2.5rem;
+    background: var(--cream);
+    border-bottom: 3px solid var(--gold);
+    transition: all .4s;
+    opacity: 0; transform: translateY(30px);
+  }
+  .benefit-card.visible { opacity: 1; transform: none; }
+  .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(212,160,23,.15); }
+  .benefit-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; font-weight: 900; color: rgba(212,160,23,.2);
+    line-height: 1; margin-bottom: 1rem;
+  }
+  .benefit-card h4 { font-size: 1.1rem; color: var(--dark); font-weight: 700; margin-bottom: .8rem; }
+  .benefit-card p { color: #2a6b60; font-size: .95rem; line-height: 1.7; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark-mid);
+    padding: 3rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid rgba(212,160,23,.2);
+  }
+  .footer-logo {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem; color: var(--gold-light);
+  }
+  .footer-copy { color: rgba(255,253,247,.3); font-size: .85rem; }
+  .footer-link {
+    color: var(--gold); text-decoration: none; font-size: .9rem;
+    transition: color .3s;
+  }
+  .footer-link:hover { color: var(--gold-light); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes imgReveal {
+    to { opacity: 1; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(40px); transition: all .8s cubic-bezier(.16,1,.3,1); }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* stagger delays */
+  .tip-card:nth-child(1) { transition-delay: 0s; }
+  .tip-card:nth-child(2) { transition-delay: .1s; }
+  .tip-card:nth-child(3) { transition-delay: .2s; }
+
+  .benefit-card:nth-child(1) { transition-delay: 0s; }
+  .benefit-card:nth-child(2) { transition-delay: .12s; }
+  .benefit-card:nth-child(3) { transition-delay: .24s; }
+  .benefit-card:nth-child(4) { transition-delay: .06s; }
+  .benefit-card:nth-child(5) { transition-delay: .18s; }
+  .benefit-card:nth-child(6) { transition-delay: .3s; }
+
+  .feat-item:nth-child(1) { transition-delay: 0s; }
+  .feat-item:nth-child(2) { transition-delay: .1s; }
+  .feat-item:nth-child(3) { transition-delay: .2s; }
+  .feat-item:nth-child(4) { transition-delay: .3s; }
+  .feat-item:nth-child(5) { transition-delay: .4s; }
+  .feat-item:nth-child(6) { transition-delay: .5s; }
+
+  .cur-item:nth-child(1) { transition-delay: 0s; }
+  .cur-item:nth-child(2) { transition-delay: .08s; }
+  .cur-item:nth-child(3) { transition-delay: .16s; }
+  .cur-item:nth-child(4) { transition-delay: .24s; }
+
+  /* ── Particle canvas ── */
+  #canvas {
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 0; opacity: .4;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { height: 50vh; }
+    .about-grid, .curriculum-grid, .tips-cards, .benefits-grid { grid-template-columns: 1fr; }
+    .about-img-accent { display: none; }
+    nav .nav-links, nav .nav-cta { display: none; }
+  }
+  .hero-visual {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* ── HERO ── */
+  .hero {
+    position: relative; 
+    min-height: 100vh; /* ارتفاع كامل للشاشة */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+    
+    /* --- التعديل الأساسي هنا --- */
+    /* وضع الصورة كخلفية مع طبقة تغميق (Overlay) */
+    background: 
+      /* طبقة لونية غامقة شفافة عشان الكلام يظهر */
+      linear-gradient(to right, rgba(10, 31, 28, 0.9), rgba(10, 31, 28, 0.7)),
+      /* رابط الصورة (استخدمت دقة أعلى عشان الخلفية) */
+      url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1800&q=85');
+      
+    background-size: cover;     /* عشان الصورة تغطي المساحة كلها */
+    background-position: center center; /* توسيط الصورة */
+    background-attachment: fixed; /* (اختياري) بيعمل تأثير بارالاكس حلو لما تعمل سكرول */
+  }
+
+  .hero-container {
+    /* ألغينا الجريد لأنه مبقاش فيه عمودين */
+    display: flex;
+    justify-content: center; /* توسيط المحتوى أفقياً */
+    align-items: center; /* توسيط المحتوى رأسياً */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+  }
+
+  /* Arabic pattern overlay */
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.03;
+    background-image: repeating-linear-gradient(
+      45deg, var(--gold-light) 0, var(--gold-light) 1px, transparent 0, transparent 50%
+    );
+    background-size: 30px 30px;
+    pointer-events: none;
+  }
+
+  /* Arabic letter decorations */
+  .arabic-deco {
+    position: absolute;
+    font-family: 'Amiri', serif;
+    color: var(--gold);
+    opacity: .05;
+    pointer-events: none;
+    user-select: none;
+    font-weight: 700;
+  }
+  .arabic-deco.d1 { font-size: 25rem; top: -5rem; right: 10%; }
+  .arabic-deco.d2 { font-size: 15rem; bottom: 5rem; left: -2rem; }
+
+  .hero-content {
+    text-align: left; /* محاذاة النص لليسار */
+    max-width: 800px; /* تحديد عرض أقصى للنص عشان ميكونش عريض أوي */
+  }
+
+  /* باقي تنسيقات النصوص والأزرار زي ما هي */
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: rgba(97, 206, 112, 0.15);
+    border: 1px solid rgba(97, 206, 112, 0.4);
+    color: var(--gold-light);
+    padding: .5rem 1.2rem; border-radius: 30px;
+    font-size: .85rem; letter-spacing: .1em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .7s .2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem); /* كبرنا الخط شوية عشان الخلفية */
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp .8s .35s forwards;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold-light);
+    position: relative;
+  }
+  .hero-title em::after {
+    content: '';
+    position: absolute; bottom: 8px; left: 0; right: 0; height: 4px;
+    background: var(--gold);
+    border-radius: 2px;
+    z-index: -1;
+    opacity: 0.7;
+  }
+
+  .hero-desc {
+    color: rgba(255,253,247,.85); /* فتحنا لون النص شوية */
+    font-size: 1.2rem; line-height: 1.8;
+    max-width: 90%;
+    margin-bottom: 2rem;
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp .8s .5s forwards;
+  }
+
+  .hero-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; color: var(--gold-light);
+    margin-bottom: 2.5rem;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .7s .65s forwards;
+  }
+  .hero-price span { font-size: 2.2rem; font-weight: 900; color: var(--white); }
+
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp .7s .8s forwards;
+  }
+  .btn-primary {
+    background: var(--gold-light);
+    color: var(--dark);
+    padding: 1rem 2.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    text-decoration: none; 
+    border-radius: 8px;
+    letter-spacing: .05em;
+    transition: all .35s;
+    box-shadow: 0 10px 20px rgba(97, 206, 112, 0.2);
+  }
+  .btn-primary:hover {
+    background: var(--white); color: var(--dark);
+    transform: translateY(-3px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500; font-size: 1.1rem;
+    text-decoration: none; 
+    border: 2px solid rgba(255,253,247,.5); /* تقلت البوردر شوية عشان يظهر فوق الصورة */
+    border-radius: 8px;
+    letter-spacing: .05em;
+    transition: all .35s;
+  }
+  .btn-outline:hover { border-color: var(--gold-light); color: var(--gold-light); background: rgba(10, 31, 28, 0.8); }
+
+  .hero-stats {
+    display: flex; gap: 4rem; /* زودنا المسافة بين الاحصائيات */
+    margin-top: 4rem;
+    opacity: 0; animation: fadeUp .7s 1s forwards;
+  }
+  .stat {
+    border-left: 3px solid var(--gold-light); /* غيرنا اللون للأخضر الفاتح عشان يظهر */
+    padding-left: 1.5rem;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; color: var(--white); font-weight: 900; line-height: 1.1;
+  }
+  .stat-label { color: rgba(255,253,247,.8); font-size: .9rem; letter-spacing: .05em; text-transform: uppercase; font-weight: 500; }
+
+  /* تم حذف كل الـ CSS الخاص بـ .hero-visual و .image-wrapper */
+
+  /* scroll indicator */
+  .scroll-ind {
+    position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    z-index: 5;
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    color: rgba(255,253,247,.6); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
+    opacity: 0; animation: fadeUp .7s 1.2s forwards;
+  }
+  .scroll-line {
+    width: 2px; height: 50px;
+    background: linear-gradient(to bottom, var(--gold-light), transparent);
+    animation: scrollLine 2s 1.5s infinite;
+  }
+  @keyframes scrollLine {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* Responsive for Hero */
+  @media (max-width: 992px) {
+    .hero-container {
+      text-align: center;
+      padding-top: 4rem;
+    }
+    .hero-content {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-desc {
+      text-align: center;
+       max-width: 100%;
+    }
+    .hero-ctas {
+        justify-content: center;
+    }
+    .hero-stats {
+      justify-content: center;
+      gap: 2rem;
+    }
+    .stat {
+      border-left: none;
+      border-top: 3px solid var(--gold-light);
+      padding-left: 0;
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+     /* =========================================
+       SECTION 1: HERO / INTRO SECTION (Light)
+    ========================================= */
+    .hero-kids {
+      background-color: var(--cream);
+      padding: 5rem 5%;
+      overflow: hidden;
+    }
+
+    .hero-kids__container {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5rem;
+    }
+
+    .hero-kids__text-col {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero-kids__tags {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-kids__title {
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      color: var(--text);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-kids__desc {
+      color: rgba(13, 46, 42, 0.75); /* نفس لون التيكست بس بشفافية عشان يكون أهدى للعين */
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .hero-kids__action {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .hero-kids__price {
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .hero-kids__price strong {
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+
+    .hero-kids__btn {
+      background-color: var(--gold);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold);
+    }
+
+    .hero-kids__btn:hover {
+      background-color: transparent;
+      color: var(--gold);
+    }
+
+    /* Media / Image Column */
+    .hero-kids__media-col {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-kids__media-wrapper {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .hero-kids__media-wrapper img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Play Button */
+    .hero-kids__play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background-color: rgba(10, 31, 28, 0.7); /* استخدمت الـ dark هنا كخلفية للزرار */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s;
+      border: 2px solid rgba(247,255,254,0.3);
+    }
+
+    .hero-kids__play-btn:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      background-color: var(--gold);
+    }
+
+    .hero-kids__play-icon {
+      width: 0; 
+      height: 0; 
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 20px solid var(--white);
+      margin-left: 5px;
+    }
+
+    /* Green Frame (كان أصفر وخليناه أخضر Accent) */
+    .hero-kids__frame {
+      position: absolute;
+      bottom: -25px;
+      right: -25px;
+      width: 100%;
+      height: 100%;
+      border-right: 8px solid var(--accent);
+      border-bottom: 8px solid var(--accent);
+      border-bottom-right-radius: 15px;
+      z-index: 1;
+    }
+
+    /* =========================================
+       SECTION 2: CONSULTATION FORM (Dark)
+    ========================================= */
+    .consult-dark {
+      background-color: var(--dark);
+      padding: 6rem 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Background Geometric Shapes */
+    .consult-dark__shape {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 3px solid rgba(247, 255, 254, 0.05); /* لون أبيض خفيف جداً */
+      transform: rotate(45deg);
+      z-index: 0;
+    }
+
+    .consult-dark__shape::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px; height: 70px;
+      background-color: var(--gold);
+    }
+
+    .consult-dark__shape--1 { top: -60px; right: 15%; }
+    .consult-dark__shape--2 { bottom: 15%; left: 42%; }
+
+    .consult-dark__container {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .consult-dark__text {
+      flex: 1;
+      max-width: 480px;
+    }
+
+    .consult-dark__text h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .consult-dark__text p {
+      color: rgba(247, 255, 254, 0.7); /* أبيض بشفافية */
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* Form Box */
+    .consult-dark__form-wrapper {
+      flex: 1;
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .consult-dark__box {
+      background-color: var(--white);
+      padding: 3rem 2.5rem;
+      border-radius: 4px;
+      box-shadow: 15px 15px 0px 0px var(--accent); /* الشادو بقى لونه أخضر Accent */
+    }
+
+    .consult-dark__box h3 {
+      font-size: 1.5rem;
+      color: var(--text);
+      margin-bottom: 1.8rem;
+      font-weight: 800;
+    }
+
+    .consult-dark__row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .consult-dark__group {
+      flex: 1;
+    }
+
+    .consult-dark__group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .consult-dark__group label span {
+      color: #e74c3c; /* لون أحمر خفيف للنجمة */
+    }
+
+    .consult-dark__group input,
+    .consult-dark__group select,
+    .consult-dark__group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid rgba(13, 46, 42, 0.2); /* حدود ناعمة */
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.3s;
+      box-sizing: border-box;
+    }
+
+    .consult-dark__group input:focus,
+    .consult-dark__group select:focus,
+    .consult-dark__group textarea:focus {
+      border-color: var(--gold); /* لون التركيز أزرق/تيراكوتا */
+    }
+
+    .consult-dark__group--full {
+      margin-bottom: 15px;
+    }
+
+    .consult-dark__submit {
+      background-color: var(--gold);
+      color: var(--white);
+      border: none;
+      padding: 16px;
+      border-radius: 4px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .consult-dark__submit:hover {
+      background-color: var(--gold-dark);
+    }
+
+    /* =========================================
+       RESPONSIVE (Mobiles & Tablets)
+    ========================================= */
+    @media (max-width: 991px) {
+      .hero-kids__container,
+      .consult-dark__container {
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+      }
+      
+      .hero-kids__text-col, 
+      .consult-dark__text {
+        max-width: 100%;
+      }
+      
+      .hero-kids__action {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .consult-dark__row {
+        flex-direction: column;
+        gap: 0;
+      }
+      
+      .consult-dark__group {
+        margin-bottom: 15px;
+      }
+
+      .consult-dark__shape {
+        display: none;
+      }
+    }
+</style>
+</head>
+<body>
+
+<!-- Subtle particle canvas -->
+<canvas id="canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">Riwaq Al <span>Quran</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#curriculum">Curriculum</a></li>
+    <li><a href="#benefits">Benefits</a></li>
+    <li><a href="#tips">Tips</a></li>
+  </ul>
+  <a class="nav-cta" href="https://portal.riwaqalquran.com/register">Free Trial →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="arabic-deco d1">ع</div>
+  <div class="arabic-deco d2">ب</div>
+
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">For Kids · All Levels · Online</div>
+      <h1 class="hero-title">
+        Learn <em>Arabic</em><br>
+        Online for Kids
+      </h1>
+      <p class="hero-desc">
+        Riwaq Al Quran's comprehensive online Arabic program helps children master speaking, listening, reading, and writing through interactive lessons and expert teachers.
+      </p>
+      <div class="hero-price">Starting from <span>$32</span>/month</div>
+      
+      <div class="hero-ctas">
+        <a class="btn-primary" href="https://portal.riwaqalquran.com/register">Start Now For Free!</a>
+        <a class="btn-outline" href="#about">Discover the Course</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">5K+</div>
+          <div class="stat-label">Happy Students</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Native Tutors</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Access</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  <div class="scroll-ind">
+    Scroll
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="section-tag reveal">About the Course</p>
+      <h2 class="section-title reveal">A Comprehensive Arabic<br>Journey for Your Child</h2>
+      <p class="reveal">Riwaq Al Quran's <strong>Online Arabic Classes for Kids</strong> provide a comprehensive and engaging program designed to help children master the Arabic language. Through interactive lessons, fun activities, and expert guidance, kids will develop all core language skills.</p>
+      <p class="reveal">Beginning around age five — when young minds absorb language effortlessly — our curriculum builds a solid, lasting foundation while keeping the experience playful and joyful.</p>
+
+      <div class="features-list">
+        <div class="feat-item">
+          <div class="feat-icon">✦</div>
+          <div class="feat-text"><h4>Interactive Lessons</h4><p>Engaging games and activities make learning genuinely fun.</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">✦</div>
+          <div class="feat-text"><h4>Expert Native Teachers</h4><p>Qualified native Arabic-speaking tutors guide every step.</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">✦</div>
+          <div class="feat-text"><h4>Comprehensive Curriculum</h4><p>Phonetics, vocabulary, speaking, listening, and writing.</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">✦</div>
+          <div class="feat-text"><h4>Flexible Scheduling</h4><p>Study at your convenience with 24/7 access to materials.</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">✦</div>
+          <div class="feat-text"><h4>Progress Tracking</h4><p>Regular assessments and feedback to monitor development.</p></div>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon">✦</div>
+          <div class="feat-text"><h4>Cultural Appreciation</h4><p>Explore Arab culture, traditions, and festivals.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-imgs">
+      <img class="about-img-main" src="https://images.unsplash.com/photo-1588075592405-d3b5f8b5de68?w=700&q=80" alt="Child studying">
+      <img class="about-img-accent" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="Arabic book">
+      <div class="about-badge">
+        <span class="num">$32</span>
+        <span class="lbl">per month</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum" id="curriculum">
+  <p class="section-tag reveal">What We Teach</p>
+  <h2 class="section-title reveal">Course Curriculum</h2>
+
+  <div class="curriculum-grid">
+    <div class="cur-list">
+      <div class="cur-item active" data-detail="0">
+        <div class="icon">🔤</div>
+        <div>
+          <h5>Arabic Alphabet</h5>
+          <p>Learn every letter in a fun, creative way</p>
+        </div>
+      </div>
+      <div class="cur-item" data-detail="1">
+        <div class="icon">💬</div>
+        <div>
+          <h5>Speaking & Listening</h5>
+          <p>Build real conversational confidence</p>
+        </div>
+      </div>
+      <div class="cur-item" data-detail="2">
+        <div class="icon">📖</div>
+        <div>
+          <h5>Vocabulary & Phrases</h5>
+          <p>Fundamental words for everyday use</p>
+        </div>
+      </div>
+      <div class="cur-item" data-detail="3">
+        <div class="icon">🦁</div>
+        <div>
+          <h5>Arabic through Stories</h5>
+          <p>Animal world and immersive stories</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cur-detail" id="curDetail">
+      <h3 id="curTitle">Arabic Alphabet</h3>
+      <p id="curDesc">The foundation of Arabic literacy begins with mastering all 28 letters. Our engaging, colorful approach makes each letter memorable through songs, games, and drawing activities designed for young learners.</p>
+      <ul id="curList">
+        <li>Recognize and write all 28 letters</li>
+        <li>Understand different letter forms (initial, medial, final)</li>
+        <li>Learn pronunciation with native accent</li>
+        <li>Connect letters to form basic words</li>
+        <li>Fun alphabet songs and memory games</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips" id="tips">
+  <div class="tips-inner">
+    <p class="section-tag reveal" style="display:inline-block">Teaching Tips</p>
+    <h2 class="section-title reveal" style="margin-top:.5rem">Best Age & Tips for<br>Teaching Kids Arabic</h2>
+    <p class="tips-desc reveal">Teaching your children Arabic can be a delightful journey if you start early and make it engaging. Begin introducing the language around age five — when their minds are like sponges — and keep the experience playful and patient.</p>
+
+    <div class="tips-cards">
+      <div class="tip-card reveal">
+        <div class="tip-num">01</div>
+        <h4>Start Early — Age 5</h4>
+        <p>Young minds absorb languages effortlessly. The earlier you begin, the more natural Arabic becomes for your child's developing brain.</p>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-num">02</div>
+        <h4>Make It Playful</h4>
+        <p>Use colorful apps, interactive games, and fun stories to immerse your child in Arabic without it feeling like a chore.</p>
+      </div>
+      <div class="tip-card reveal">
+        <div class="tip-num">03</div>
+        <h4>Be Consistent & Patient</h4>
+        <p>Mastering Arabic takes time. Keep sessions regular and encourage your child at every small achievement along the journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits" id="benefits">
+  <p class="section-tag reveal">Why Choose Us</p>
+  <h2 class="section-title reveal">Benefits of Online<br>Arabic Classes for Kids</h2>
+
+  <div class="benefits-grid">
+    <div class="benefit-card reveal">
+      <div class="benefit-num">01</div>
+      <h4>Fun & Engaging</h4>
+      <p>Lessons designed specifically to keep young learners motivated, interested, and coming back for more.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">02</div>
+      <h4>Strong Foundation</h4>
+      <p>Build a solid base in all Arabic language skills that will serve your child throughout their lifetime.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">03</div>
+      <h4>Cultural Connection</h4>
+      <p>Foster a deeper understanding of Arab culture, heritage, and traditions through language immersion.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">04</div>
+      <h4>Flexible Learning</h4>
+      <p>Study anytime, anywhere, without disrupting your child's existing routine or schedule.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">05</div>
+      <h4>Qualified Tutors</h4>
+      <p>Learn from expert native Arabic speakers who understand how to make language learning magical for kids.</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">06</div>
+      <h4>Free Trial Class</h4>
+      <p>Experience our unique teaching methods risk-free before making any commitment to enroll.</p>
+    </div>
+  </div>
+</section>
+
+
+        <section class="zq-cta-section">
+            <div class="zq-cta-box">
+                <div class="zq-cta-lines"></div>
+                <div class="zq-cta-content">
+                    <div class="zq-text-side">
+                        <h2>Take Your Understanding of the Quran to New Heights
+                            - Enroll in Riwaq Al Quran Today!</h2>
+                        <p>Enroll now at Riwaq Al Quran and discover new
+                            perspectives as you learn the essence of the Quran
+                            through our exceptional online courses! Sign up for
+                            a free trial today!</p>
+                        <form class="zq-form" action="#" method="POST">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email"
+                                required>
+                            <button type="submit">Start a Free Trial</button>
+                        </form>
+                    </div>
+                    <div class="zq-img-side">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 1200 1200" width="100%" height="100%"
+                            preserveAspectRatio="xMidYMid meet"
+                            style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);">
+                            <defs>
+                                <clippath id="__lottie_element_362"><rect
+                                        width="1200" height="1200" x="0"
+                                        y="0"></rect></clippath>
+                            </defs>
+                            <g clip-path="url(#__lottie_element_362)">
+                                <g
+                                    transform="matrix(1,0,0,1,72.40200805664062,726.2061157226562)"
+                                    opacity="1" style="display: block;">
+                                    <g opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#1c90a8" fill-opacity="1"
+                                            d=" M812.9819946289062,0 C812.9819946289062,0 1031.3170166015625,0 1031.3170166015625,0 C1031.3170166015625,0 1031.3170166015625,-53.17399978637695 1031.3170166015625,-53.17399978637695 C1031.3170166015625,-53.17399978637695 876.2269897460938,-53.17399978637695 876.2269897460938,-53.17399978637695 C876.2269897460938,-53.17399978637695 876.2269897460938,-123.66899871826172 876.2269897460938,-123.66899871826172 C876.2269897460938,-123.66899871826172 1015.6069946289062,-123.66899871826172 1015.6069946289062,-123.66899871826172 C1015.6069946289062,-123.66899871826172 1015.6069946289062,-172.81500244140625 1015.6069946289062,-172.81500244140625 C1015.6069946289062,-172.81500244140625 876.2269897460938,-172.81500244140625 876.2269897460938,-172.81500244140625 C876.2269897460938,-172.81500244140625 876.2269897460938,-234.447998046875 876.2269897460938,-234.447998046875 C876.2269897460938,-234.447998046875 1028.093994140625,-234.447998046875 1028.093994140625,-234.447998046875 C1028.093994140625,-234.447998046875 1028.093994140625,-287.62200927734375 1028.093994140625,-287.62200927734375 C1028.093994140625,-287.62200927734375 812.9819946289062,-287.62200927734375 812.9819946289062,-287.62200927734375 C812.9819946289062,-287.62200927734375 812.9819946289062,0 812.9819946289062,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M812.9819946289062,0 C812.9819946289062,0 1031.3170166015625,0 1031.3170166015625,0 C1031.3170166015625,0 1031.3170166015625,-53.17399978637695 1031.3170166015625,-53.17399978637695 C1031.3170166015625,-53.17399978637695 876.2269897460938,-53.17399978637695 876.2269897460938,-53.17399978637695 C876.2269897460938,-53.17399978637695 876.2269897460938,-123.66899871826172 876.2269897460938,-123.66899871826172 C876.2269897460938,-123.66899871826172 1015.6069946289062,-123.66899871826172 1015.6069946289062,-123.66899871826172 C1015.6069946289062,-123.66899871826172 1015.6069946289062,-172.81500244140625 1015.6069946289062,-172.81500244140625 C1015.6069946289062,-172.81500244140625 876.2269897460938,-172.81500244140625 876.2269897460938,-172.81500244140625 C876.2269897460938,-172.81500244140625 876.2269897460938,-234.447998046875 876.2269897460938,-234.447998046875 C876.2269897460938,-234.447998046875 1028.093994140625,-234.447998046875 1028.093994140625,-234.447998046875 C1028.093994140625,-234.447998046875 1028.093994140625,-287.62200927734375 1028.093994140625,-287.62200927734375 C1028.093994140625,-287.62200927734375 812.9819946289062,-287.62200927734375 812.9819946289062,-287.62200927734375 C812.9819946289062,-287.62200927734375 812.9819946289062,0 812.9819946289062,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#1c90a8"
+                                            fill-opacity="1"
+                                            d=" M553.7839965820312,0 C553.7839965820312,0 772.1190185546875,0 772.1190185546875,0 C772.1190185546875,0 772.1190185546875,-53.17399978637695 772.1190185546875,-53.17399978637695 C772.1190185546875,-53.17399978637695 617.0289916992188,-53.17399978637695 617.0289916992188,-53.17399978637695 C617.0289916992188,-53.17399978637695 617.0289916992188,-123.66899871826172 617.0289916992188,-123.66899871826172 C617.0289916992188,-123.66899871826172 756.4089965820312,-123.66899871826172 756.4089965820312,-123.66899871826172 C756.4089965820312,-123.66899871826172 756.4089965820312,-172.81500244140625 756.4089965820312,-172.81500244140625 C756.4089965820312,-172.81500244140625 617.0289916992188,-172.81500244140625 617.0289916992188,-172.81500244140625 C617.0289916992188,-172.81500244140625 617.0289916992188,-234.447998046875 617.0289916992188,-234.447998046875 C617.0289916992188,-234.447998046875 768.89599609375,-234.447998046875 768.89599609375,-234.447998046875 C768.89599609375,-234.447998046875 768.89599609375,-287.62200927734375 768.89599609375,-287.62200927734375 C768.89599609375,-287.62200927734375 553.7839965820312,-287.62200927734375 553.7839965820312,-287.62200927734375 C553.7839965820312,-287.62200927734375 553.7839965820312,0 553.7839965820312,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M553.7839965820312,0 C553.7839965820312,0 772.1190185546875,0 772.1190185546875,0 C772.1190185546875,0 772.1190185546875,-53.17399978637695 772.1190185546875,-53.17399978637695 C772.1190185546875,-53.17399978637695 617.0289916992188,-53.17399978637695 617.0289916992188,-53.17399978637695 C617.0289916992188,-53.17399978637695 617.0289916992188,-123.66899871826172 617.0289916992188,-123.66899871826172 C617.0289916992188,-123.66899871826172 756.4089965820312,-123.66899871826172 756.4089965820312,-123.66899871826172 C756.4089965820312,-123.66899871826172 756.4089965820312,-172.81500244140625 756.4089965820312,-172.81500244140625 C756.4089965820312,-172.81500244140625 617.0289916992188,-172.81500244140625 617.0289916992188,-172.81500244140625 C617.0289916992188,-172.81500244140625 617.0289916992188,-234.447998046875 617.0289916992188,-234.447998046875 C617.0289916992188,-234.447998046875 768.89599609375,-234.447998046875 768.89599609375,-234.447998046875 C768.89599609375,-234.447998046875 768.89599609375,-287.62200927734375 768.89599609375,-287.62200927734375 C768.89599609375,-287.62200927734375 553.7839965820312,-287.62200927734375 553.7839965820312,-287.62200927734375 C553.7839965820312,-287.62200927734375 553.7839965820312,0 553.7839965820312,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#1c90a8"
+                                            fill-opacity="1"
+                                            d=" M328.2349853515625,-238.4770050048828 C328.2349853515625,-238.4770050048828 397.5220031738281,-238.4770050048828 397.5220031738281,-238.4770050048828 C425.7200012207031,-238.4770050048828 441.02801513671875,-226.39100646972656 441.02801513671875,-198.5959930419922 C441.02801513671875,-169.5919952392578 425.7200012207031,-157.5070037841797 397.5220031738281,-157.5070037841797 C397.5220031738281,-157.5070037841797 328.2349853515625,-157.5070037841797 328.2349853515625,-157.5070037841797 C328.2349853515625,-157.5070037841797 328.2349853515625,-238.4770050048828 328.2349853515625,-238.4770050048828z M264.989990234375,0 C264.989990234375,0 328.2349853515625,0 328.2349853515625,0 C328.2349853515625,0 328.2349853515625,-112.38999938964844 328.2349853515625,-112.38999938964844 C328.2349853515625,-112.38999938964844 391.47900390625,-112.38999938964844 391.47900390625,-112.38999938964844 C423.3030090332031,-112.38999938964844 434.9859924316406,-99.09600067138672 439.4169921875,-68.88400268554688 C442.6400146484375,-45.92300033569336 441.8330078125,-18.12700080871582 449.48699951171875,0 C449.48699951171875,0 512.7319946289062,0 512.7319946289062,0 C501.4530029296875,-16.113000869750977 501.8550109863281,-49.95199966430664 500.6470031738281,-68.0790023803711 C498.63299560546875,-97.08300018310547 489.7699890136719,-127.29499816894531 458.75201416015625,-135.3520050048828 C458.75201416015625,-135.3520050048828 458.75201416015625,-136.15699768066406 458.75201416015625,-136.15699768066406 C490.57598876953125,-149.04800415039062 504.2720031738281,-174.42599487304688 504.2720031738281,-208.26400756835938 C504.2720031738281,-251.77000427246094 471.6440124511719,-287.62200927734375 420.08099365234375,-287.62200927734375 C420.08099365234375,-287.62200927734375 264.989990234375,-287.62200927734375 264.989990234375,-287.62200927734375 C264.989990234375,-287.62200927734375 264.989990234375,0 264.989990234375,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M328.2349853515625,-238.4770050048828 C328.2349853515625,-238.4770050048828 397.5220031738281,-238.4770050048828 397.5220031738281,-238.4770050048828 C425.7200012207031,-238.4770050048828 441.02801513671875,-226.39100646972656 441.02801513671875,-198.5959930419922 C441.02801513671875,-169.5919952392578 425.7200012207031,-157.5070037841797 397.5220031738281,-157.5070037841797 C397.5220031738281,-157.5070037841797 328.2349853515625,-157.5070037841797 328.2349853515625,-157.5070037841797 C328.2349853515625,-157.5070037841797 328.2349853515625,-238.4770050048828 328.2349853515625,-238.4770050048828z M264.989990234375,0 C264.989990234375,0 328.2349853515625,0 328.2349853515625,0 C328.2349853515625,0 328.2349853515625,-112.38999938964844 328.2349853515625,-112.38999938964844 C328.2349853515625,-112.38999938964844 391.47900390625,-112.38999938964844 391.47900390625,-112.38999938964844 C423.3030090332031,-112.38999938964844 434.9859924316406,-99.09600067138672 439.4169921875,-68.88400268554688 C442.6400146484375,-45.92300033569336 441.8330078125,-18.12700080871582 449.48699951171875,0 C449.48699951171875,0 512.7319946289062,0 512.7319946289062,0 C501.4530029296875,-16.113000869750977 501.8550109863281,-49.95199966430664 500.6470031738281,-68.0790023803711 C498.63299560546875,-97.08300018310547 489.7699890136719,-127.29499816894531 458.75201416015625,-135.3520050048828 C458.75201416015625,-135.3520050048828 458.75201416015625,-136.15699768066406 458.75201416015625,-136.15699768066406 C490.57598876953125,-149.04800415039062 504.2720031738281,-174.42599487304688 504.2720031738281,-208.26400756835938 C504.2720031738281,-251.77000427246094 471.6440124511719,-287.62200927734375 420.08099365234375,-287.62200927734375 C420.08099365234375,-287.62200927734375 264.989990234375,-287.62200927734375 264.989990234375,-287.62200927734375 C264.989990234375,-287.62200927734375 264.989990234375,0 264.989990234375,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#1c90a8"
+                                            fill-opacity="1"
+                                            d=" M27.795000076293945,0 C27.795000076293945,0 91.04000091552734,0 91.04000091552734,0 C91.04000091552734,0 91.04000091552734,-118.83499908447266 91.04000091552734,-118.83499908447266 C91.04000091552734,-118.83499908447266 211.48699951171875,-118.83499908447266 211.48699951171875,-118.83499908447266 C211.48699951171875,-118.83499908447266 211.48699951171875,-167.9810028076172 211.48699951171875,-167.9810028076172 C211.48699951171875,-167.9810028076172 91.04000091552734,-167.9810028076172 91.04000091552734,-167.9810028076172 C91.04000091552734,-167.9810028076172 91.04000091552734,-234.447998046875 91.04000091552734,-234.447998046875 C91.04000091552734,-234.447998046875 230.01699829101562,-234.447998046875 230.01699829101562,-234.447998046875 C230.01699829101562,-234.447998046875 230.01699829101562,-287.62200927734375 230.01699829101562,-287.62200927734375 C230.01699829101562,-287.62200927734375 27.795000076293945,-287.62200927734375 27.795000076293945,-287.62200927734375 C27.795000076293945,-287.62200927734375 27.795000076293945,0 27.795000076293945,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M27.795000076293945,0 C27.795000076293945,0 91.04000091552734,0 91.04000091552734,0 C91.04000091552734,0 91.04000091552734,-118.83499908447266 91.04000091552734,-118.83499908447266 C91.04000091552734,-118.83499908447266 211.48699951171875,-118.83499908447266 211.48699951171875,-118.83499908447266 C211.48699951171875,-118.83499908447266 211.48699951171875,-167.9810028076172 211.48699951171875,-167.9810028076172 C211.48699951171875,-167.9810028076172 91.04000091552734,-167.9810028076172 91.04000091552734,-167.9810028076172 C91.04000091552734,-167.9810028076172 91.04000091552734,-234.447998046875 91.04000091552734,-234.447998046875 C91.04000091552734,-234.447998046875 230.01699829101562,-234.447998046875 230.01699829101562,-234.447998046875 C230.01699829101562,-234.447998046875 230.01699829101562,-287.62200927734375 230.01699829101562,-287.62200927734375 C230.01699829101562,-287.62200927734375 27.795000076293945,-287.62200927734375 27.795000076293945,-287.62200927734375 C27.795000076293945,-287.62200927734375 27.795000076293945,0 27.795000076293945,0z"></path></g></g><g
+                                    transform="matrix(1,0,0,1,116.40200805664062,709.1481323242188)"
+                                    opacity="1" style="display: block;"><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M812.9819946289062,0 C812.9819946289062,0 1031.3170166015625,0 1031.3170166015625,0 C1031.3170166015625,0 1031.3170166015625,-53.17399978637695 1031.3170166015625,-53.17399978637695 C1031.3170166015625,-53.17399978637695 876.2269897460938,-53.17399978637695 876.2269897460938,-53.17399978637695 C876.2269897460938,-53.17399978637695 876.2269897460938,-123.66899871826172 876.2269897460938,-123.66899871826172 C876.2269897460938,-123.66899871826172 1015.6069946289062,-123.66899871826172 1015.6069946289062,-123.66899871826172 C1015.6069946289062,-123.66899871826172 1015.6069946289062,-172.81500244140625 1015.6069946289062,-172.81500244140625 C1015.6069946289062,-172.81500244140625 876.2269897460938,-172.81500244140625 876.2269897460938,-172.81500244140625 C876.2269897460938,-172.81500244140625 876.2269897460938,-234.447998046875 876.2269897460938,-234.447998046875 C876.2269897460938,-234.447998046875 1028.093994140625,-234.447998046875 1028.093994140625,-234.447998046875 C1028.093994140625,-234.447998046875 1028.093994140625,-287.62200927734375 1028.093994140625,-287.62200927734375 C1028.093994140625,-287.62200927734375 812.9819946289062,-287.62200927734375 812.9819946289062,-287.62200927734375 C812.9819946289062,-287.62200927734375 812.9819946289062,0 812.9819946289062,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M812.9819946289062,0 C812.9819946289062,0 1031.3170166015625,0 1031.3170166015625,0 C1031.3170166015625,0 1031.3170166015625,-53.17399978637695 1031.3170166015625,-53.17399978637695 C1031.3170166015625,-53.17399978637695 876.2269897460938,-53.17399978637695 876.2269897460938,-53.17399978637695 C876.2269897460938,-53.17399978637695 876.2269897460938,-123.66899871826172 876.2269897460938,-123.66899871826172 C876.2269897460938,-123.66899871826172 1015.6069946289062,-123.66899871826172 1015.6069946289062,-123.66899871826172 C1015.6069946289062,-123.66899871826172 1015.6069946289062,-172.81500244140625 1015.6069946289062,-172.81500244140625 C1015.6069946289062,-172.81500244140625 876.2269897460938,-172.81500244140625 876.2269897460938,-172.81500244140625 C876.2269897460938,-172.81500244140625 876.2269897460938,-234.447998046875 876.2269897460938,-234.447998046875 C876.2269897460938,-234.447998046875 1028.093994140625,-234.447998046875 1028.093994140625,-234.447998046875 C1028.093994140625,-234.447998046875 1028.093994140625,-287.62200927734375 1028.093994140625,-287.62200927734375 C1028.093994140625,-287.62200927734375 812.9819946289062,-287.62200927734375 812.9819946289062,-287.62200927734375 C812.9819946289062,-287.62200927734375 812.9819946289062,0 812.9819946289062,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M553.7839965820312,0 C553.7839965820312,0 772.1190185546875,0 772.1190185546875,0 C772.1190185546875,0 772.1190185546875,-53.17399978637695 772.1190185546875,-53.17399978637695 C772.1190185546875,-53.17399978637695 617.0289916992188,-53.17399978637695 617.0289916992188,-53.17399978637695 C617.0289916992188,-53.17399978637695 617.0289916992188,-123.66899871826172 617.0289916992188,-123.66899871826172 C617.0289916992188,-123.66899871826172 756.4089965820312,-123.66899871826172 756.4089965820312,-123.66899871826172 C756.4089965820312,-123.66899871826172 756.4089965820312,-172.81500244140625 756.4089965820312,-172.81500244140625 C756.4089965820312,-172.81500244140625 617.0289916992188,-172.81500244140625 617.0289916992188,-172.81500244140625 C617.0289916992188,-172.81500244140625 617.0289916992188,-234.447998046875 617.0289916992188,-234.447998046875 C617.0289916992188,-234.447998046875 768.89599609375,-234.447998046875 768.89599609375,-234.447998046875 C768.89599609375,-234.447998046875 768.89599609375,-287.62200927734375 768.89599609375,-287.62200927734375 C768.89599609375,-287.62200927734375 553.7839965820312,-287.62200927734375 553.7839965820312,-287.62200927734375 C553.7839965820312,-287.62200927734375 553.7839965820312,0 553.7839965820312,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M553.7839965820312,0 C553.7839965820312,0 772.1190185546875,0 772.1190185546875,0 C772.1190185546875,0 772.1190185546875,-53.17399978637695 772.1190185546875,-53.17399978637695 C772.1190185546875,-53.17399978637695 617.0289916992188,-53.17399978637695 617.0289916992188,-53.17399978637695 C617.0289916992188,-53.17399978637695 617.0289916992188,-123.66899871826172 617.0289916992188,-123.66899871826172 C617.0289916992188,-123.66899871826172 756.4089965820312,-123.66899871826172 756.4089965820312,-123.66899871826172 C756.4089965820312,-123.66899871826172 756.4089965820312,-172.81500244140625 756.4089965820312,-172.81500244140625 C756.4089965820312,-172.81500244140625 617.0289916992188,-172.81500244140625 617.0289916992188,-172.81500244140625 C617.0289916992188,-172.81500244140625 617.0289916992188,-234.447998046875 617.0289916992188,-234.447998046875 C617.0289916992188,-234.447998046875 768.89599609375,-234.447998046875 768.89599609375,-234.447998046875 C768.89599609375,-234.447998046875 768.89599609375,-287.62200927734375 768.89599609375,-287.62200927734375 C768.89599609375,-287.62200927734375 553.7839965820312,-287.62200927734375 553.7839965820312,-287.62200927734375 C553.7839965820312,-287.62200927734375 553.7839965820312,0 553.7839965820312,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M328.2349853515625,-238.4770050048828 C328.2349853515625,-238.4770050048828 397.5220031738281,-238.4770050048828 397.5220031738281,-238.4770050048828 C425.7200012207031,-238.4770050048828 441.02801513671875,-226.39100646972656 441.02801513671875,-198.5959930419922 C441.02801513671875,-169.5919952392578 425.7200012207031,-157.5070037841797 397.5220031738281,-157.5070037841797 C397.5220031738281,-157.5070037841797 328.2349853515625,-157.5070037841797 328.2349853515625,-157.5070037841797 C328.2349853515625,-157.5070037841797 328.2349853515625,-238.4770050048828 328.2349853515625,-238.4770050048828z M264.989990234375,0 C264.989990234375,0 328.2349853515625,0 328.2349853515625,0 C328.2349853515625,0 328.2349853515625,-112.38999938964844 328.2349853515625,-112.38999938964844 C328.2349853515625,-112.38999938964844 391.47900390625,-112.38999938964844 391.47900390625,-112.38999938964844 C423.3030090332031,-112.38999938964844 434.9859924316406,-99.09600067138672 439.4169921875,-68.88400268554688 C442.6400146484375,-45.92300033569336 441.8330078125,-18.12700080871582 449.48699951171875,0 C449.48699951171875,0 512.7319946289062,0 512.7319946289062,0 C501.4530029296875,-16.113000869750977 501.8550109863281,-49.95199966430664 500.6470031738281,-68.0790023803711 C498.63299560546875,-97.08300018310547 489.7699890136719,-127.29499816894531 458.75201416015625,-135.3520050048828 C458.75201416015625,-135.3520050048828 458.75201416015625,-136.15699768066406 458.75201416015625,-136.15699768066406 C490.57598876953125,-149.04800415039062 504.2720031738281,-174.42599487304688 504.2720031738281,-208.26400756835938 C504.2720031738281,-251.77000427246094 471.6440124511719,-287.62200927734375 420.08099365234375,-287.62200927734375 C420.08099365234375,-287.62200927734375 264.989990234375,-287.62200927734375 264.989990234375,-287.62200927734375 C264.989990234375,-287.62200927734375 264.989990234375,0 264.989990234375,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M328.2349853515625,-238.4770050048828 C328.2349853515625,-238.4770050048828 397.5220031738281,-238.4770050048828 397.5220031738281,-238.4770050048828 C425.7200012207031,-238.4770050048828 441.02801513671875,-226.39100646972656 441.02801513671875,-198.5959930419922 C441.02801513671875,-169.5919952392578 425.7200012207031,-157.5070037841797 397.5220031738281,-157.5070037841797 C397.5220031738281,-157.5070037841797 328.2349853515625,-157.5070037841797 328.2349853515625,-157.5070037841797 C328.2349853515625,-157.5070037841797 328.2349853515625,-238.4770050048828 328.2349853515625,-238.4770050048828z M264.989990234375,0 C264.989990234375,0 328.2349853515625,0 328.2349853515625,0 C328.2349853515625,0 328.2349853515625,-112.38999938964844 328.2349853515625,-112.38999938964844 C328.2349853515625,-112.38999938964844 391.47900390625,-112.38999938964844 391.47900390625,-112.38999938964844 C423.3030090332031,-112.38999938964844 434.9859924316406,-99.09600067138672 439.4169921875,-68.88400268554688 C442.6400146484375,-45.92300033569336 441.8330078125,-18.12700080871582 449.48699951171875,0 C449.48699951171875,0 512.7319946289062,0 512.7319946289062,0 C501.4530029296875,-16.113000869750977 501.8550109863281,-49.95199966430664 500.6470031738281,-68.0790023803711 C498.63299560546875,-97.08300018310547 489.7699890136719,-127.29499816894531 458.75201416015625,-135.3520050048828 C458.75201416015625,-135.3520050048828 458.75201416015625,-136.15699768066406 458.75201416015625,-136.15699768066406 C490.57598876953125,-149.04800415039062 504.2720031738281,-174.42599487304688 504.2720031738281,-208.26400756835938 C504.2720031738281,-251.77000427246094 471.6440124511719,-287.62200927734375 420.08099365234375,-287.62200927734375 C420.08099365234375,-287.62200927734375 264.989990234375,-287.62200927734375 264.989990234375,-287.62200927734375 C264.989990234375,-287.62200927734375 264.989990234375,0 264.989990234375,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M27.795000076293945,0 C27.795000076293945,0 91.04000091552734,0 91.04000091552734,0 C91.04000091552734,0 91.04000091552734,-118.83499908447266 91.04000091552734,-118.83499908447266 C91.04000091552734,-118.83499908447266 211.48699951171875,-118.83499908447266 211.48699951171875,-118.83499908447266 C211.48699951171875,-118.83499908447266 211.48699951171875,-167.9810028076172 211.48699951171875,-167.9810028076172 C211.48699951171875,-167.9810028076172 91.04000091552734,-167.9810028076172 91.04000091552734,-167.9810028076172 C91.04000091552734,-167.9810028076172 91.04000091552734,-234.447998046875 91.04000091552734,-234.447998046875 C91.04000091552734,-234.447998046875 230.01699829101562,-234.447998046875 230.01699829101562,-234.447998046875 C230.01699829101562,-234.447998046875 230.01699829101562,-287.62200927734375 230.01699829101562,-287.62200927734375 C230.01699829101562,-287.62200927734375 27.795000076293945,-287.62200927734375 27.795000076293945,-287.62200927734375 C27.795000076293945,-287.62200927734375 27.795000076293945,0 27.795000076293945,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M27.795000076293945,0 C27.795000076293945,0 91.04000091552734,0 91.04000091552734,0 C91.04000091552734,0 91.04000091552734,-118.83499908447266 91.04000091552734,-118.83499908447266 C91.04000091552734,-118.83499908447266 211.48699951171875,-118.83499908447266 211.48699951171875,-118.83499908447266 C211.48699951171875,-118.83499908447266 211.48699951171875,-167.9810028076172 211.48699951171875,-167.9810028076172 C211.48699951171875,-167.9810028076172 91.04000091552734,-167.9810028076172 91.04000091552734,-167.9810028076172 C91.04000091552734,-167.9810028076172 91.04000091552734,-234.447998046875 91.04000091552734,-234.447998046875 C91.04000091552734,-234.447998046875 230.01699829101562,-234.447998046875 230.01699829101562,-234.447998046875 C230.01699829101562,-234.447998046875 230.01699829101562,-287.62200927734375 230.01699829101562,-287.62200927734375 C230.01699829101562,-287.62200927734375 27.795000076293945,-287.62200927734375 27.795000076293945,-287.62200927734375 C27.795000076293945,-287.62200927734375 27.795000076293945,0 27.795000076293945,0z"></path></g></g><g
+                                    transform="matrix(1,0,0,1,152.40200805664062,685.841796875)"
+                                    opacity="1" style="display: block;"><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M812.9819946289062,0 C812.9819946289062,0 1031.3170166015625,0 1031.3170166015625,0 C1031.3170166015625,0 1031.3170166015625,-53.17399978637695 1031.3170166015625,-53.17399978637695 C1031.3170166015625,-53.17399978637695 876.2269897460938,-53.17399978637695 876.2269897460938,-53.17399978637695 C876.2269897460938,-53.17399978637695 876.2269897460938,-123.66899871826172 876.2269897460938,-123.66899871826172 C876.2269897460938,-123.66899871826172 1015.6069946289062,-123.66899871826172 1015.6069946289062,-123.66899871826172 C1015.6069946289062,-123.66899871826172 1015.6069946289062,-172.81500244140625 1015.6069946289062,-172.81500244140625 C1015.6069946289062,-172.81500244140625 876.2269897460938,-172.81500244140625 876.2269897460938,-172.81500244140625 C876.2269897460938,-172.81500244140625 876.2269897460938,-234.447998046875 876.2269897460938,-234.447998046875 C876.2269897460938,-234.447998046875 1028.093994140625,-234.447998046875 1028.093994140625,-234.447998046875 C1028.093994140625,-234.447998046875 1028.093994140625,-287.62200927734375 1028.093994140625,-287.62200927734375 C1028.093994140625,-287.62200927734375 812.9819946289062,-287.62200927734375 812.9819946289062,-287.62200927734375 C812.9819946289062,-287.62200927734375 812.9819946289062,0 812.9819946289062,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M812.9819946289062,0 C812.9819946289062,0 1031.3170166015625,0 1031.3170166015625,0 C1031.3170166015625,0 1031.3170166015625,-53.17399978637695 1031.3170166015625,-53.17399978637695 C1031.3170166015625,-53.17399978637695 876.2269897460938,-53.17399978637695 876.2269897460938,-53.17399978637695 C876.2269897460938,-53.17399978637695 876.2269897460938,-123.66899871826172 876.2269897460938,-123.66899871826172 C876.2269897460938,-123.66899871826172 1015.6069946289062,-123.66899871826172 1015.6069946289062,-123.66899871826172 C1015.6069946289062,-123.66899871826172 1015.6069946289062,-172.81500244140625 1015.6069946289062,-172.81500244140625 C1015.6069946289062,-172.81500244140625 876.2269897460938,-172.81500244140625 876.2269897460938,-172.81500244140625 C876.2269897460938,-172.81500244140625 876.2269897460938,-234.447998046875 876.2269897460938,-234.447998046875 C876.2269897460938,-234.447998046875 1028.093994140625,-234.447998046875 1028.093994140625,-234.447998046875 C1028.093994140625,-234.447998046875 1028.093994140625,-287.62200927734375 1028.093994140625,-287.62200927734375 C1028.093994140625,-287.62200927734375 812.9819946289062,-287.62200927734375 812.9819946289062,-287.62200927734375 C812.9819946289062,-287.62200927734375 812.9819946289062,0 812.9819946289062,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M553.7839965820312,0 C553.7839965820312,0 772.1190185546875,0 772.1190185546875,0 C772.1190185546875,0 772.1190185546875,-53.17399978637695 772.1190185546875,-53.17399978637695 C772.1190185546875,-53.17399978637695 617.0289916992188,-53.17399978637695 617.0289916992188,-53.17399978637695 C617.0289916992188,-53.17399978637695 617.0289916992188,-123.66899871826172 617.0289916992188,-123.66899871826172 C617.0289916992188,-123.66899871826172 756.4089965820312,-123.66899871826172 756.4089965820312,-123.66899871826172 C756.4089965820312,-123.66899871826172 756.4089965820312,-172.81500244140625 756.4089965820312,-172.81500244140625 C756.4089965820312,-172.81500244140625 617.0289916992188,-172.81500244140625 617.0289916992188,-172.81500244140625 C617.0289916992188,-172.81500244140625 617.0289916992188,-234.447998046875 617.0289916992188,-234.447998046875 C617.0289916992188,-234.447998046875 768.89599609375,-234.447998046875 768.89599609375,-234.447998046875 C768.89599609375,-234.447998046875 768.89599609375,-287.62200927734375 768.89599609375,-287.62200927734375 C768.89599609375,-287.62200927734375 553.7839965820312,-287.62200927734375 553.7839965820312,-287.62200927734375 C553.7839965820312,-287.62200927734375 553.7839965820312,0 553.7839965820312,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M553.7839965820312,0 C553.7839965820312,0 772.1190185546875,0 772.1190185546875,0 C772.1190185546875,0 772.1190185546875,-53.17399978637695 772.1190185546875,-53.17399978637695 C772.1190185546875,-53.17399978637695 617.0289916992188,-53.17399978637695 617.0289916992188,-53.17399978637695 C617.0289916992188,-53.17399978637695 617.0289916992188,-123.66899871826172 617.0289916992188,-123.66899871826172 C617.0289916992188,-123.66899871826172 756.4089965820312,-123.66899871826172 756.4089965820312,-123.66899871826172 C756.4089965820312,-123.66899871826172 756.4089965820312,-172.81500244140625 756.4089965820312,-172.81500244140625 C756.4089965820312,-172.81500244140625 617.0289916992188,-172.81500244140625 617.0289916992188,-172.81500244140625 C617.0289916992188,-172.81500244140625 617.0289916992188,-234.447998046875 617.0289916992188,-234.447998046875 C617.0289916992188,-234.447998046875 768.89599609375,-234.447998046875 768.89599609375,-234.447998046875 C768.89599609375,-234.447998046875 768.89599609375,-287.62200927734375 768.89599609375,-287.62200927734375 C768.89599609375,-287.62200927734375 553.7839965820312,-287.62200927734375 553.7839965820312,-287.62200927734375 C553.7839965820312,-287.62200927734375 553.7839965820312,0 553.7839965820312,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M328.2349853515625,-238.4770050048828 C328.2349853515625,-238.4770050048828 397.5220031738281,-238.4770050048828 397.5220031738281,-238.4770050048828 C425.7200012207031,-238.4770050048828 441.02801513671875,-226.39100646972656 441.02801513671875,-198.5959930419922 C441.02801513671875,-169.5919952392578 425.7200012207031,-157.5070037841797 397.5220031738281,-157.5070037841797 C397.5220031738281,-157.5070037841797 328.2349853515625,-157.5070037841797 328.2349853515625,-157.5070037841797 C328.2349853515625,-157.5070037841797 328.2349853515625,-238.4770050048828 328.2349853515625,-238.4770050048828z M264.989990234375,0 C264.989990234375,0 328.2349853515625,0 328.2349853515625,0 C328.2349853515625,0 328.2349853515625,-112.38999938964844 328.2349853515625,-112.38999938964844 C328.2349853515625,-112.38999938964844 391.47900390625,-112.38999938964844 391.47900390625,-112.38999938964844 C423.3030090332031,-112.38999938964844 434.9859924316406,-99.09600067138672 439.4169921875,-68.88400268554688 C442.6400146484375,-45.92300033569336 441.8330078125,-18.12700080871582 449.48699951171875,0 C449.48699951171875,0 512.7319946289062,0 512.7319946289062,0 C501.4530029296875,-16.113000869750977 501.8550109863281,-49.95199966430664 500.6470031738281,-68.0790023803711 C498.63299560546875,-97.08300018310547 489.7699890136719,-127.29499816894531 458.75201416015625,-135.3520050048828 C458.75201416015625,-135.3520050048828 458.75201416015625,-136.15699768066406 458.75201416015625,-136.15699768066406 C490.57598876953125,-149.04800415039062 504.2720031738281,-174.42599487304688 504.2720031738281,-208.26400756835938 C504.2720031738281,-251.77000427246094 471.6440124511719,-287.62200927734375 420.08099365234375,-287.62200927734375 C420.08099365234375,-287.62200927734375 264.989990234375,-287.62200927734375 264.989990234375,-287.62200927734375 C264.989990234375,-287.62200927734375 264.989990234375,0 264.989990234375,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M328.2349853515625,-238.4770050048828 C328.2349853515625,-238.4770050048828 397.5220031738281,-238.4770050048828 397.5220031738281,-238.4770050048828 C425.7200012207031,-238.4770050048828 441.02801513671875,-226.39100646972656 441.02801513671875,-198.5959930419922 C441.02801513671875,-169.5919952392578 425.7200012207031,-157.5070037841797 397.5220031738281,-157.5070037841797 C397.5220031738281,-157.5070037841797 328.2349853515625,-157.5070037841797 328.2349853515625,-157.5070037841797 C328.2349853515625,-157.5070037841797 328.2349853515625,-238.4770050048828 328.2349853515625,-238.4770050048828z M264.989990234375,0 C264.989990234375,0 328.2349853515625,0 328.2349853515625,0 C328.2349853515625,0 328.2349853515625,-112.38999938964844 328.2349853515625,-112.38999938964844 C328.2349853515625,-112.38999938964844 391.47900390625,-112.38999938964844 391.47900390625,-112.38999938964844 C423.3030090332031,-112.38999938964844 434.9859924316406,-99.09600067138672 439.4169921875,-68.88400268554688 C442.6400146484375,-45.92300033569336 441.8330078125,-18.12700080871582 449.48699951171875,0 C449.48699951171875,0 512.7319946289062,0 512.7319946289062,0 C501.4530029296875,-16.113000869750977 501.8550109863281,-49.95199966430664 500.6470031738281,-68.0790023803711 C498.63299560546875,-97.08300018310547 489.7699890136719,-127.29499816894531 458.75201416015625,-135.3520050048828 C458.75201416015625,-135.3520050048828 458.75201416015625,-136.15699768066406 458.75201416015625,-136.15699768066406 C490.57598876953125,-149.04800415039062 504.2720031738281,-174.42599487304688 504.2720031738281,-208.26400756835938 C504.2720031738281,-251.77000427246094 471.6440124511719,-287.62200927734375 420.08099365234375,-287.62200927734375 C420.08099365234375,-287.62200927734375 264.989990234375,-287.62200927734375 264.989990234375,-287.62200927734375 C264.989990234375,-287.62200927734375 264.989990234375,0 264.989990234375,0z"></path></g><g
+                                        opacity="1"
+                                        transform="matrix(1,0,0,1,0,0)"><path
+                                            fill="#61CE70"
+                                            fill-opacity="1"
+                                            d=" M27.795000076293945,0 C27.795000076293945,0 91.04000091552734,0 91.04000091552734,0 C91.04000091552734,0 91.04000091552734,-118.83499908447266 91.04000091552734,-118.83499908447266 C91.04000091552734,-118.83499908447266 211.48699951171875,-118.83499908447266 211.48699951171875,-118.83499908447266 C211.48699951171875,-118.83499908447266 211.48699951171875,-167.9810028076172 211.48699951171875,-167.9810028076172 C211.48699951171875,-167.9810028076172 91.04000091552734,-167.9810028076172 91.04000091552734,-167.9810028076172 C91.04000091552734,-167.9810028076172 91.04000091552734,-234.447998046875 91.04000091552734,-234.447998046875 C91.04000091552734,-234.447998046875 230.01699829101562,-234.447998046875 230.01699829101562,-234.447998046875 C230.01699829101562,-234.447998046875 230.01699829101562,-287.62200927734375 230.01699829101562,-287.62200927734375 C230.01699829101562,-287.62200927734375 27.795000076293945,-287.62200927734375 27.795000076293945,-287.62200927734375 C27.795000076293945,-287.62200927734375 27.795000076293945,0 27.795000076293945,0z"></path><path
+                                            stroke-linecap="butt"
+                                            stroke-linejoin="miter"
+                                            fill-opacity="0"
+                                            stroke-miterlimit="4"
+                                            stroke="rgb(0,0,0)"
+                                            stroke-opacity="1" stroke-width="10"
+                                            d=" M27.795000076293945,0 C27.795000076293945,0 91.04000091552734,0 91.04000091552734,0 C91.04000091552734,0 91.04000091552734,-118.83499908447266 91.04000091552734,-118.83499908447266 C91.04000091552734,-118.83499908447266 211.48699951171875,-118.83499908447266 211.48699951171875,-118.83499908447266 C211.48699951171875,-118.83499908447266 211.48699951171875,-167.9810028076172 211.48699951171875,-167.9810028076172 C211.48699951171875,-167.9810028076172 91.04000091552734,-167.9810028076172 91.04000091552734,-167.9810028076172 C91.04000091552734,-167.9810028076172 91.04000091552734,-234.447998046875 91.04000091552734,-234.447998046875 C91.04000091552734,-234.447998046875 230.01699829101562,-234.447998046875 230.01699829101562,-234.447998046875 C230.01699829101562,-234.447998046875 230.01699829101562,-287.62200927734375 230.01699829101562,-287.62200927734375 C230.01699829101562,-287.62200927734375 27.795000076293945,-287.62200927734375 27.795000076293945,-287.62200927734375 C27.795000076293945,-287.62200927734375 27.795000076293945,0 27.795000076293945,0z"></path></g></g></g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="testimonial-content">
+                <div class="quote-mark">“</div>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p class="review-text">“I am very thankful first
+                                    of all to Allah Subhana wat’ala then to
+                                    Riwaq that they helped me in taking
+                                    admission in tajweed ijazah course. The
+                                    teachers are regular, hardworking and Allah
+                                    fearing. The management is very good.”</p>
+                                <div class="user-info">
+                                    <img
+                                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/muslim-woman-1-1.png"
+                                        alt="User">
+                                    <div class="user-details">
+                                        <h4>Sr. Mariah Saleem, India</h4>
+                                        <p>Online Quran Classes for Kids</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p class="review-text">“We currently have our
+                                    son enrolled with Riwaq institute and we are
+                                    very happy with the way they work. Our
+                                    teacher is exceptional masha Allah his
+                                    recitation reminds us about Allah. The fee
+                                    is affordable for their one on one
+                                    service.”</p>
+                                <div class="user-info">
+                                    <img
+                                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/muslim-man-1.png"
+                                        alt="User">
+                                    <div class="user-details">
+                                        <h4>Br. Khaled Mohammad, USA</h4>
+                                        <p>Online Quran Classes for Kids</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <p class="review-text">“Riwaq is a wonderful
+                                    institute to study Quran with. We are
+                                    blessed with two wonderful teachers for both
+                                    our kids. Both the teachers are always
+                                    flexible and friendly. Their recitation and
+                                    memorization has improved vastly.”</p>
+                                <div class="user-info">
+                                    <img
+                                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/muslim-woman-1.png"
+                                        alt="User">
+                                    <div class="user-details">
+                                        <h4>Sr. Anisa Desai, California</h4>
+                                        <p>Online Quran Classes for Kids</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="btn-wrapper">
+                    <a href="#" class="view-all-btn">View all Reviews!</a>
+                </div>
+            </div>
+            <div class="testimonial-image">
+                <img
+                    src="https://riwaqalquran.com/wp-content/uploads/2023/07/I-am-very-thankful-first-of-All-to-Allah-Subhana-2.png"
+                    alt="Happy Student">
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <h2 class="faq-title">Popular Questions to Ask Before<br>Choosing a
+                Course</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How Are Online Arabic Learning Beneficial for
+                            Kids?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Online Arabic learning is extremely beneficial for
+                            kids as it offers a flexible and convenient way to
+                            learn the language from the comfort of their own
+                            homes. It provides interactive lessons, engaging
+                            activities, and personalized attention from
+                            experienced teachers, making the learning process
+                            enjoyable and effective.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Why Should My Kids Learn Arabic?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Learning Arabic opens a world of opportunities for
+                            your kids. It helps them connect with their cultural
+                            heritage, communicate with family members or friends
+                            who speak Arabic, understand Islamic teachings
+                            better, and even enhance cognitive abilities such as
+                            problem-solving skills and multitasking.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How to Speak Arabic for Kids?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our skilled instructors at Riwaq Al Quran use
+                            immersive teaching methods to help children develop
+                            excellent speaking skills in Arabic. Through
+                            interactive conversations, role-playing exercises,
+                            pronunciation drills, and vocabulary-building
+                            activities tailored specifically for young
+                            learners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="unified-section">
+            <div class="section-header">
+                <h2>Our Mentors</h2>
+                <p>Riwaq Al Quran is committed to providing exceptional Quranic,
+                    Arabic, and Islamic education using state-of-the-art
+                    technology. Our unique approach combines highly qualified
+                    teachers, expert scholars, and personalized learning
+                    plans.</p>
+            </div>
+            <div class="mentors-grid">
+                <div class="brutal-card">
+                    <img
+                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/ChatGPT-Image-Feb-3-2026-10_42_59-AM.png"
+                        alt="Faten Nour" class="mentor-img">
+                    <div class="mentor-content">
+                        <h3 class="mentor-name">Faten Nour</h3>
+                        <div class="mentor-sessions">6418 session</div>
+                        <div class="btn-wrapper">
+                            <a href="#" class="brutal-btn btn-mentor">View
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brutal-card">
+                    <img
+                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/MF.png"
+                        alt="Muhammad Faramawi" class="mentor-img">
+                    <div class="mentor-content">
+                        <h3 class="mentor-name">Muhammad Faramawi</h3>
+                        <div class="mentor-sessions">3298 session</div>
+                        <div class="btn-wrapper">
+                            <a href="#" class="brutal-btn btn-mentor">View
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brutal-card">
+                    <img
+                        src="https://riwaqalquran.com/wp-content/uploads/2025/04/ChatGPT-Image-Feb-5-2026-03_44_41-AM.png"
+                        alt="Abdulrahman Sobhy" class="mentor-img">
+                    <div class="mentor-content">
+                        <h3 class="mentor-name">Abdulrahman Sobhy</h3>
+                        <div class="mentor-sessions">6220 session</div>
+                        <div class="btn-wrapper">
+                            <a href="#" class="brutal-btn btn-mentor">View
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brutal-card">
+                    <img
+                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/ChatGPT-Image-Feb-3-2026-02_46_31-AM.png"
+                        alt="Muhammad Gad" class="mentor-img">
+                    <div class="mentor-content">
+                        <h3 class="mentor-name">Muhammad Gad</h3>
+                        <div class="mentor-sessions">6822 session</div>
+                        <div class="btn-wrapper">
+                            <a href="#" class="brutal-btn btn-mentor">View
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="unified-section">
+            <div class="section-header">
+                <h2>Students Also Bought</h2>
+                <p>Explore more courses tailored to enhance your journey in
+                    learning Arabic and the Quran.</p>
+            </div>
+            <div class="courses-grid">
+                <div class="brutal-card">
+                    <img
+                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/16-1-scaled.jpg"
+                        alt="Islamic Studies" class="course-img">
+                    <div class="course-content">
+                        <h3 class="course-title">Islamic Studies Classes For
+                            Kids</h3>
+                        <p class="course-desc">Islamic Studies Classes for Kids.
+                            Enroll your child in Riwaq Al Quran’s Islamic
+                            Studies for Kids course...</p>
+                        <div class="btn-wrapper">
+                            <a href="#" class="brutal-btn btn-course"><i
+                                    class="fas fa-arrow-circle-right"></i> View
+                                Course</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brutal-card">
+                    <img
+                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/03-2-scaled.jpg"
+                        alt="Noorani Qaida" class="course-img">
+                    <div class="course-content">
+                        <h3 class="course-title">Learn Noorani Qaida Online</h3>
+                        <p class="course-desc">Noorani Qaida Online Course With
+                            Native Arabic Tutors. Learn Noorani Qaida online
+                            with Riwaq Al Quran’s...</p>
+                        <div class="btn-wrapper">
+                            <a href="#" class="brutal-btn btn-course"><i
+                                    class="fas fa-arrow-circle-right"></i> View
+                                Course</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brutal-card">
+                    <img
+                        src="https://riwaqalquran.com/wp-content/uploads/2023/07/02-1-scaled.jpg"
+                        alt="Recitation" class="course-img">
+                    <div class="course-content">
+                        <h3 class="course-title">Online Quran Recitation
+                            Course</h3>
+                        <p class="course-desc">Learn Quran Recitation Online –
+                            Quran Recitation Course Riwaq Al Quran online Quran
+                            reading course...</p>
+                        <div class="btn-wrapper">
+                            <a href="#" class="brutal-btn btn-course"><i
+                                    class="fas fa-arrow-circle-right"></i> View
+                                Course</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <section class="hero-kids">
+    <div class="hero-kids__container">
+      
+      <div class="hero-kids__text-col">
+        <div class="hero-kids__tags">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--gold)"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Advanced, Beginner, Intermediate, Kids</span>
+        </div>
+        
+        <h1 class="hero-kids__title">Learn Arabic<br>Online For Kids</h1>
+        
+        <p class="hero-kids__desc">Riwaq Al Quran’s Online Arabic Classes for Kids provide a comprehensive program to help children master speaking, listening, reading, and writing skills through interactive lessons and engaging activities.</p>
+        <p class="hero-kids__desc">Designed with expert teachers, the course fosters a love for the Arabic language, enhances cultural understanding, and builds confidence.</p>
+        <p class="hero-kids__desc">With expert teachers, interactive classes, and fun activities, children will develop speaking and listening skills and gain confidence, cultural understanding, and a love for the Arabic Language.</p>
+        
+        <div class="hero-kids__action">
+          <div class="hero-kids__price">
+            Starts from<br><strong>$32/mo</strong>
+          </div>
+          <a href="#" class="hero-kids__btn">Start Now For Free!</a>
+        </div>
+      </div>
+      
+      <div class="hero-kids__media-col">
+        <div class="hero-kids__media-wrapper">
+          <img src="https://riwaqalquran.com/wp-content/uploads/2023/07/muslim-woman-praying.svg" alt="Learn Arabic Online">
+          
+          <div class="hero-kids__play-btn">
+            <div class="hero-kids__play-icon"></div>
+          </div>
+          
+          <div class="hero-kids__frame"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="consult-dark">
+    <div class="consult-dark__shape consult-dark__shape--1"></div>
+    <div class="consult-dark__shape consult-dark__shape--2"></div>
+    
+    <div class="consult-dark__container">
+      
+      <div class="consult-dark__text">
+        <h2>Drive Your Child's Arabic Learning Journey Today!</h2>
+        <p>Riwaq Al Quran provides interactive Arabic classes for kids to enhance their language skills, with expert teachers fostering a love for the language in a supportive environment. Enroll your child now to unleash their potential.</p>
+      </div>
+      
+      <div class="consult-dark__form-wrapper">
+        <div class="consult-dark__box">
+          <h3>Get a Consultation</h3>
+          
+          <form action="#" method="POST">
+            <div class="consult-dark__row">
+              <div class="consult-dark__group">
+                <label>NAME <span>*</span></label>
+                <input type="text" required>
+              </div>
+              <div class="consult-dark__group">
+                <label>EMAIL <span>*</span></label>
+                <input type="email" required>
+              </div>
+            </div>
+            
+            <div class="consult-dark__row">
+              <div class="consult-dark__group">
+                <label>MOBILE <span>*</span></label>
+                <input type="tel" required>
+              </div>
+              <div class="consult-dark__group">
+                <label>AGE <span>*</span></label>
+                <select required>
+                  <option value="">-None-</option>
+                  <option value="4-6">4-6 years</option>
+                  <option value="7-12">7-12 years</option>
+                  <option value="13+">13+ years</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="consult-dark__group consult-dark__group--full">
+              <label>SUBJECT <span>*</span></label>
+              <select required>
+                <option value="kids">Kids Courses</option>
+                <option value="quran">Quran Courses</option>
+              </select>
+            </div>
+            
+            <div class="consult-dark__group consult-dark__group--full">
+              <label>MESSAGE <span>*</span></label>
+              <textarea rows="3" required></textarea>
+            </div>
+            
+            <button type="submit" class="consult-dark__submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2 class="reveal">Enroll Now & Start Your<br>Child's Arabic Journey!</h2>
+  <p class="reveal">Starts from $32/month — Free Trial Available!</p>
+  <a class="btn-dark reveal" href="https://portal.riwaqalquran.com/register">Get a Free Trial Class →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Riwaq Al Quran</div>
+  <div class="footer-copy">© 2024 Riwaq Al Quran. All rights reserved.</div>
+  <a class="footer-link" href="https://riwaqalquran.com">riwaqalquran.com →</a>
+</footer>
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+// ── Scroll Observer ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll(
+  '.reveal, .feat-item, .tip-card, .benefit-card, .cur-item, .cur-detail, .about-img-main, .about-img-accent, .about-badge'
+).forEach(el => observer.observe(el));
+
+// ── Navbar scroll effect ──
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.style.padding = window.scrollY > 60 ? '.6rem 2.5rem' : '1rem 2.5rem';
+  nav.style.background = window.scrollY > 60 ? 'rgba(26,18,8,.98)' : 'rgba(26,18,8,.92)';
+});
+
+// ── Curriculum interactive ──
+const details = [
+  {
+    title: 'Arabic Alphabet',
+    desc: 'The foundation of Arabic literacy begins with mastering all 28 letters. Our engaging, colorful approach makes each letter memorable through songs, games, and drawing activities designed for young learners.',
+    points: [
+      'Recognize and write all 28 letters',
+      'Understand different letter forms (initial, medial, final)',
+      'Learn pronunciation with native accent',
+      'Connect letters to form basic words',
+      'Fun alphabet songs and memory games'
+    ]
+  },
+  {
+    title: 'Speaking & Listening',
+    desc: 'Real communication is the heart of language learning. Our conversational approach gives children the confidence to speak Arabic naturally from the very first lesson.',
+    points: [
+      'Basic greetings and everyday phrases',
+      'Listening comprehension exercises',
+      'Pronunciation practice with native tutors',
+      'Short dialogues and role-play activities',
+      'Building confidence through repetition'
+    ]
+  },
+  {
+    title: 'Vocabulary & Phrases',
+    desc: 'A rich vocabulary is the gateway to fluent Arabic. We introduce fundamental words systematically, using visual aids, songs, and real-world contexts that children naturally connect with.',
+    points: [
+      '200+ core vocabulary words',
+      'Colors, numbers, family, food and more',
+      'Vocabulary games and flashcards',
+      'Using words in context',
+      'Weekly vocabulary building challenges'
+    ]
+  },
+  {
+    title: 'Arabic through Stories',
+    desc: 'Children learn best through stories. Our immersive narrative approach uses the Animal World and exciting tales to teach Arabic in a context that captures every child\'s imagination.',
+    points: [
+      'Illustrated Arabic storybooks',
+      'Animal names and habitats in Arabic',
+      'Reading comprehension activities',
+      'Creative storytelling exercises',
+      'Cultural stories and folklore'
+    ]
+  }
+];
+
+document.querySelectorAll('.cur-item').forEach((item, i) => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.cur-item').forEach(c => c.classList.remove('active'));
+    item.classList.add('active');
+    const d = details[i];
+    const detail = document.getElementById('curDetail');
+    detail.style.opacity = '0';
+    detail.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+      document.getElementById('curTitle').textContent = d.title;
+      document.getElementById('curDesc').textContent = d.desc;
+      const list = document.getElementById('curList');
+      list.innerHTML = d.points.map(p => `<li>${p}</li>`).join('');
+      detail.style.opacity = '1';
+      detail.style.transform = 'none';
+    }, 250);
+  });
+});
+
+// ── Subtle particle system ──
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.size = Math.random() * 2 + .5;
+    this.vx = (Math.random() - .5) * .3;
+    this.vy = (Math.random() - .5) * .3;
+    this.alpha = Math.random() * .4 + .1;
+    this.color = Math.random() > .5 ? '#1c90a8' : '#61CE70';
+  }
+  draw() {
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+  }
+}
+
+function initParticles() {
+  particles = Array.from({ length: 60 }, () => new Particle());
+}
+
+function loop() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(loop);
+}
+
+resize();
+initParticles();
+loop();
+window.addEventListener('resize', () => { resize(); initParticles(); });
+ var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        centeredSlides: true, 
+        spaceBetween: 20,
+        loop: true, 
+        speed: 5000, 
+        autoplay: {
+            delay: 0, 
+            disableOnInteraction: false, 
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            992: { spaceBetween: 30 }
+        }
+    });
+
+    // FAQ Setup
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            faqItem.classList.toggle('open');
+        });
+    });
+</script>
+</body>
+</html>
